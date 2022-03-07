@@ -70,7 +70,7 @@ services:
         - USERNAME=${MLFLOW_USER}
         - PASSWD=${MLFLOW_PASSWORD}
     image: mlflow_nginx
-    container_name: mlflow_nginx
+    container_name: mlflow_nginx_${PROJECT}
     ports:
       - "${PORT}:80"
     depends_on:
