@@ -48,7 +48,7 @@ services:
       context: ./mlflow_server
       args:
         - PROXY_SERVER=${PROXY_SERVER}
-    image: mlflow_server
+    image: mlflow_server_${PROJECT}
     environment:
       - MLFLOW_S3_ENDPOINT_URL=http://s3:9000
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
@@ -69,7 +69,7 @@ services:
       args:
         - USERNAME=${MLFLOW_USER}
         - PASSWD=${MLFLOW_PASSWORD}
-    image: mlflow_nginx
+    image: mlflow_nginx_${PROJECT}
     container_name: mlflow_nginx_${PROJECT}
     ports:
       - "${PORT}:80"
