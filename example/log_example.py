@@ -14,7 +14,6 @@ remote_server_uri = "http://<Server IP>:<PORT>" # set to MLFlow server URI (host
 mlflow.set_tracking_uri(remote_server_uri)
 
 mlflow.set_experiment("Test Experiment")
-mlflow.start_run()
 mlflow.set_tag("mlflow.runName", "Test Run")
 mlflow.log_artifact("./gandalf.gif")
 mlflow.log_metric("test_metric", 0.22)
